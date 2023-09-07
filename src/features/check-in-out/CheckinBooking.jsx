@@ -5,14 +5,14 @@ import Row from "../../ui/Row";
 import Heading from "../../ui/Heading";
 import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/Button";
-import CheckBox from "../../ui/Checkbox";
+// import CheckBox from "../../ui/Checkbox";
 import ButtonText from "../../ui/ButtonText";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "../bookings/useBooking";
 import Spinner from "../../ui/Spinner";
 import { useEffect, useState } from "react";
-import { formatCurrency } from "../../utils/helpers";
+// import { formatCurrency } from "../../utils/helpers";
 import { useChecking } from "./useCheckin";
 import { useSettings } from "../settings/useSettings";
 
