@@ -29,7 +29,7 @@ function CheckinBooking() {
   const { booking, isLoading } = useBooking();
 
   const [confirmPaid, setConfirmPaid] = useState(false);
-  const [addBreakfast, setAddBreakfast] = useState(false);
+  const [addBreakfast] = useState(false);
   const { isLoading: isLoadingSettings, settings } = useSettings();
 
   const { isCheckingIn, checkin } = useChecking();
@@ -42,7 +42,7 @@ function CheckinBooking() {
 
   const {
     id: bookingId,
-    guests,
+    // guests,
     totalPrice,
     numGuests,
     hasBreakfast,
