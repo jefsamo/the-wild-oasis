@@ -28,8 +28,6 @@ const DashboardLayout = () => {
   const cabinCount = cabins?.length;
 
   if (isLoadingRecentBookings || isLoadingRecentStays) return <Spinner />;
-  console.log(bookings);
-  console.log(stays);
   return (
     <StyledDashboardLayout>
       <Stats
