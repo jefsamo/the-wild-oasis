@@ -5,7 +5,7 @@ import Row from "../../ui/Row";
 import Heading from "../../ui/Heading";
 import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/Button";
-// import CheckBox from "../../ui/Checkbox";
+import CheckBox from "../../ui/Checkbox";
 import ButtonText from "../../ui/ButtonText";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 // import { formatCurrency } from "../../utils/helpers";
 import { useChecking } from "./useCheckin";
 import { useSettings } from "../settings/useSettings";
+import { formatCurrency } from "../../utils/helpers";
 
 const Box = styled.div`
   /* Box */
@@ -29,7 +30,8 @@ function CheckinBooking() {
   const { booking, isLoading } = useBooking();
 
   const [confirmPaid, setConfirmPaid] = useState(false);
-  const [addBreakfast] = useState(false);
+  const [addBreakfast, setAddBreakfast] = useState(false);
+
   const { isLoading: isLoadingSettings, settings } = useSettings();
 
   const { isCheckingIn, checkin } = useChecking();
@@ -42,7 +44,7 @@ function CheckinBooking() {
 
   const {
     id: bookingId,
-    // guests,
+    guests,
     totalPrice,
     numGuests,
     hasBreakfast,
@@ -79,7 +81,7 @@ function CheckinBooking() {
 
       {!hasBreakfast && (
         <Box>
-          {/* <CheckBox
+          <CheckBox
             checked={addBreakfast}
             onChange={() => {
               setAddBreakfast((add) => !add);
@@ -89,12 +91,12 @@ function CheckinBooking() {
             // disabled={confirmPaid || isCheckingIn}
           >
             Want to add breakfast for {formatCurrency(optionalBreakfastPrice)}?
-          </CheckBox> */}
+          </CheckBox>
         </Box>
       )}
 
       <Box>
-        {/* <CheckBox
+        <CheckBox
           checked={confirmPaid}
           onChange={() => setConfirmPaid((confirm) => !confirm)}
           id="confirm"
@@ -108,7 +110,7 @@ function CheckinBooking() {
               )} (${formatCurrency(totalPrice)} + ${formatCurrency(
                 optionalBreakfastPrice
               )})  `}
-        </CheckBox> */}
+        </CheckBox>
       </Box>
 
       <ButtonGroup>
